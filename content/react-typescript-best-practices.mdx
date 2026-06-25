@@ -1,0 +1,37 @@
+---
+title: "React & TypeScript Best Practices"
+publishedAt: "2026-06-20"
+author: "Oluwaferanmi Caleb Oyelowo"
+summary: "Essential practices for maintaining clean, type-safe, and robust React codebases."
+image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=192&fit=crop"
+---
+
+# React & TypeScript Best Practices
+
+TypeScript and React are a match made in heaven. Having strong typing on your props, state, and context can catch bugs before they ever make it to the browser. However, there are a few best practices you should follow to keep your codebase clean and maintainable.
+
+## 1. Define Props and State Explicitly
+Always define interfaces or types for your component props. This acts as built-in documentation for anyone consuming your component.
+
+```tsx
+interface UserCardProps {
+  name: string;
+  avatarUrl: string;
+  role: 'admin' | 'user';
+}
+
+export const UserCard = ({ name, avatarUrl, role }: UserCardProps) => {
+  // ...
+};
+```
+
+## 2. Avoid 'any' like the Plague
+Using `any` defeats the purpose of TypeScript. If you don't know the exact shape of an object, use `unknown` and perform type narrowing.
+
+## 3. Use Generics for Reusable Components
+When building components like generic Lists or Tables, use TypeScript generics to ensure that the data passed in matches the render functions you provide.
+
+## 4. Strict Mode
+Always enable `strict: true` in your `tsconfig.json`. This ensures that you handle `null` and `undefined` properly, preventing a whole class of runtime errors.
+
+TypeScript might slow you down slightly at the very beginning of a project, but it will save you countless hours of debugging in the long run.

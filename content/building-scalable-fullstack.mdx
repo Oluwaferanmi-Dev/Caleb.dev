@@ -1,0 +1,25 @@
+---
+title: "Building Scalable Full-Stack Applications"
+publishedAt: "2026-06-25"
+author: "Oluwaferanmi Caleb Oyelowo"
+summary: "Key strategies and architectural patterns for building full-stack applications that scale seamlessly as your user base grows."
+image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=192&fit=crop"
+---
+
+# Building Scalable Full-Stack Applications
+
+When you start a new project, it's tempting to focus solely on getting the MVP out the door. However, ignoring scalability early on can lead to painful rewrites down the road. Here are some key principles I've learned from building applications like Monexus and Yrdly.
+
+## 1. Separate Concerns
+Keep your frontend and backend decoupled. Using an API-first approach ensures that whether you're building a web app in Next.js or a mobile app in React Native, they can both consume the same backend logic without friction.
+
+## 2. Stateless Architectures
+Avoid storing session state on your application servers. By moving state to a fast key-value store or relying on JWTs for authentication, you can scale your backend horizontally without worrying about sticky sessions.
+
+## 3. Database Indexing
+The number one bottleneck as your application grows will often be the database. Make sure you understand the query patterns of your application and add indexes appropriately. Using a platform like Supabase with PostgreSQL gives you the flexibility to easily optimize these queries.
+
+## 4. Caching
+Not every request needs to hit your database. Caching read-heavy data can significantly reduce load and improve response times.
+
+Building for scale doesn't mean over-engineering from day one. It means making smart architectural choices that leave room for growth.
